@@ -1,0 +1,41 @@
+.active-table {
+  display: flex;
+  flex-direction: column;
+  min-height: 0;
+  flex: 1;
+}
+
+.table-toolbar {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  margin-bottom: 14px;
+  flex-shrink: 0;
+  gap: 10px;
+}
+
+.table-toolbar-left {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding-top: 8px;
+}
+
+.table-count {
+  color: #36404f;
+  font-size: 12px;
+  font-weight: 500;
+}
+
+.import-msg {
+  color: #22c55e;
+  font-size: 11px;
+  font-weight: 500;
+}
+
+.table-scroll {
+  flex: 1;
+  overflow-x: auto;
+  overflow-y: auto;
+  min-height: 0;
+}

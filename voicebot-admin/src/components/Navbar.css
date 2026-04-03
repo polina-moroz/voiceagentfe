@@ -1,0 +1,87 @@
+.navbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 24px;
+  height: 56px;
+  background: #161b27;
+  border-bottom: 1px solid #222636;
+  position: sticky;
+  top: 0;
+  z-index: 100;
+}
+
+.navbar-brand {
+  display: flex;
+  align-items: center;
+  gap: 18px;
+}
+
+.navbar-logo {
+  display: flex;
+  align-items: center;
+  gap: 9px;
+}
+
+.navbar-logo-icon {
+  width: 28px;
+  height: 28px;
+  background: #1e2232;
+  border: 1px solid #2c3148;
+  border-radius: 7px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.navbar-logo-icon svg {
+  width: 14px;
+  height: 14px;
+  stroke: #4f6ef7;
+  fill: none;
+  stroke-width: 2;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+
+.navbar-logo-text {
+  font-size: 14px;
+  font-weight: 700;
+  color: #dde1ea;
+  letter-spacing: -0.01em;
+}
+
+.navbar-divider {
+  width: 1px;
+  height: 18px;
+  background: #222636;
+}
+
+.navbar-user {
+  font-size: 13px;
+  color: #4e5464;
+}
+
+.navbar-user strong {
+  color: #7b849a;
+  font-weight: 500;
+}
+
+.navbar-logout {
+  background: #1e2232;
+  border: 1px solid #2c3148;
+  color: #5a6073;
+  padding: 6px 14px;
+  border-radius: 7px;
+  cursor: pointer;
+  font-family: inherit;
+  font-size: 13px;
+  font-weight: 500;
+  transition: border-color 0.15s, color 0.15s, background 0.15s;
+}
+
+.navbar-logout:hover {
+  background: #1f1418;
+  border-color: #3d1c1c;
+  color: #f87171;
+}

@@ -1,0 +1,157 @@
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  font-size: 14px;
+}
+
+body {
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  background: #0f1115;
+  color: #dde1ea;
+  line-height: 1.5;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* ── Scrollbars ── */
+* {
+  scrollbar-width: thin;
+  scrollbar-color: #2c3148 transparent;
+}
+
+*::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+
+*::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+*::-webkit-scrollbar-thumb {
+  background: #2c3148;
+  border-radius: 10px;
+}
+
+*::-webkit-scrollbar-thumb:hover {
+  background: #3a4160;
+}
+
+*::-webkit-scrollbar-corner {
+  background: transparent;
+}
+
+.section-title {
+  font-size: 14px;
+  font-weight: 600;
+  color: #dde1ea;
+  letter-spacing: 0.01em;
+}
+
+/* ── Tables ── */
+.table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 13px;
+}
+
+.table th {
+  text-align: left;
+  color: #5a6073;
+  font-weight: 600;
+  font-size: 11px;
+  letter-spacing: 0.07em;
+  text-transform: uppercase;
+  padding: 10px 14px;
+  border-bottom: 1px solid #222636;
+  white-space: nowrap;
+}
+
+.table td {
+  padding: 11px 14px;
+  border-bottom: 1px solid #1c1f2c;
+  color: #b8bfcc;
+  vertical-align: middle;
+}
+
+.table tbody tr {
+  transition: background 0.1s;
+}
+
+.table tbody tr:hover td {
+  background: #1a1e2c;
+}
+
+.cell-mono {
+  font-family: 'SF Mono', 'Fira Code', 'Courier New', monospace;
+  font-size: 12px;
+  color: #6b7385;
+  letter-spacing: 0.02em;
+}
+
+.cell-muted {
+  color: #4e5464;
+}
+
+.table-loading,
+.table-empty {
+  color: #4e5464;
+  text-align: center;
+  padding: 48px 0;
+  font-size: 13px;
+}
+
+/* ── Buttons ── */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  border: none;
+  border-radius: 7px;
+  cursor: pointer;
+  font-family: inherit;
+  font-size: 13px;
+  font-weight: 500;
+  padding: 8px 16px;
+  transition: background 0.15s, color 0.15s, border-color 0.15s;
+  white-space: nowrap;
+}
+
+.btn:disabled {
+  opacity: 0.4;
+  cursor: default;
+}
+
+.btn-primary {
+  background: #4f6ef7;
+  color: #fff;
+}
+
+.btn-primary:hover:not(:disabled) {
+  background: #3d5ce6;
+}
+
+.btn-secondary {
+  background: #1e2232;
+  border: 1px solid #2c3148;
+  color: #8b93a7;
+}
+
+.btn-secondary:hover:not(:disabled) {
+  background: #232840;
+  border-color: #4f6ef7;
+  color: #a0aacc;
+}
+
+.btn-ghost {
+  background: transparent;
+  color: #4e5464;
+}
+
+.btn-ghost:hover:not(:disabled) {
+  color: #8b93a7;
+}

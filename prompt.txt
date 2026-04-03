@@ -1,0 +1,58 @@
+Build a React admin panel for a voice calling bot. Single page app, two screens only: login and main dashboard.
+
+Login screen
+Email and password form. On success store auth token and redirect to dashboard.
+
+Dashboard layout
+Navbar at the top: current user's name on the left, Logout button on the right.
+Main area split into two columns: left column for script editor, right column for contacts/log toggle.
+
+Left column — Script editor
+Large textarea with the current call script loaded on page open.
+Save button to update the script.
+Start button at the bottom to trigger the calling queue.
+
+Right column — Toggle between two views
+Toggle label: "Active" / "Archive"
+Active view (default) shows contacts that still need to be called. This includes:
+
+contacts that have never been called yet
+contacts that did not pick up the phone (status: "no answer") — these should appear below the "not called yet" contacts, sorted by priority
+
+Each row: name, phone, info, status. Status values: "Not called", "No answer".
+Upload CSV button above the table — opens a file picker, shows preview of first rows before saving. CSV columns: name (required), phone (required), info (optional). Backend handles deduplication.
+Archive view shows only completed calls — meaning calls where the person picked up and either confirmed or declined. Status values: "Confirmed", "Declined".
+Columns: name, phone, date, status, comment.
+Filter by status at the top of the table.
+
+Pagination
+Add pagination to both tables. Show 20 rows per page. Display current page and total pages. Previous / Next buttons.
+
+Mocked data
+All API calls should be mocked for now. Use realistic fake data so all screens look functional. Mock endpoints:
+
+GET /auth/me
+POST /auth/login
+POST /auth/logout
+GET /scripts/active
+PUT /scripts/active
+POST /producer/start
+GET /leads
+POST /leads/import
+GET /calls?status=
+
+
+Code structure
+Organize the project with clean folder structure:
+
+/components — reusable UI components
+/pages — Login and Dashboard pages
+/api — all mock API calls in one place, easy to swap for real endpoints later
+/styles — separate CSS files per component, no inline styles, no duplicated styles
+/hooks — custom hooks for data fetching and state
+
+General code rules
+No duplicated code — extract reusable components. Keep components small and focused. All API calls only in /api folder, never directly in components.
+
+Stack
+React. Clean minimal UI. No heavy UI libraries unless needed for the table or file upload.
