@@ -1,6 +1,6 @@
 import './Navbar.css';
 
-export default function Navbar({ user, onLogout }) {
+export default function Navbar({ user, onLogout, page, onNavigate }) {
   return (
     <nav className="navbar">
       <div className="navbar-brand">
@@ -13,11 +13,27 @@ export default function Navbar({ user, onLogout }) {
           <span className="navbar-logo-text">VoiceBot Admin</span>
         </div>
         <div className="navbar-divider" />
-        <span className="navbar-user">Signed in as <strong>{user?.name}</strong></span>
+        <nav className="navbar-nav">
+          <button
+            className={`navbar-nav-item${page === 'script' ? ' active' : ''}`}
+            onClick={() => onNavigate('script')}
+          >
+            Script
+          </button>
+          <button
+            className={`navbar-nav-item${page === 'contacts' ? ' active' : ''}`}
+            onClick={() => onNavigate('contacts')}
+          >
+            Contacts
+          </button>
+        </nav>
       </div>
-      <button className="navbar-logout" onClick={onLogout}>
-        Sign out
-      </button>
+      <div className="navbar-right">
+        <span className="navbar-user">Signed in as <strong>{user?.name}</strong></span>
+        <button className="navbar-logout" onClick={onLogout}>
+          Sign out
+        </button>
+      </div>
     </nav>
   );
 }
